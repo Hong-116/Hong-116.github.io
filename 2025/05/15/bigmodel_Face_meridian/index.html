@@ -22,7 +22,7 @@
 
   
 
-  <title>博客上传 | Goat or Out</title>
+  <title>大模型面经 | Goat or Out</title>
 
   
 
@@ -99,17 +99,12 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">博客上传</h1>
+          <h1 class="title-wrap">大模型面经</h1>
           <h2 class="title-sub-wrap">
             <strong>Hong-116</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2025-03-11T06:28:03.000Z" itemprop="datePublished">2025-03-11</time>
+            <time  class="article-date" datetime="2025-05-15T05:58:22.072Z" itemprop="datePublished">2025-05-15</time>
           </h2>
-          
-            <h2 class="last-time">
-              <span>最后更新于</span>
-              <time  class="article-updated" datetime="2025-03-31T18:17:28.643Z" itemprop="dateUpdated">2025-04-01</time>
-            </h2>
           
           
           <ul class="wrap-list dark">
@@ -139,19 +134,19 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h1 id="新建blog命令"><a href="#新建blog命令" class="headerlink" title="新建blog命令"></a>新建blog命令</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &#x27;blog-name&#x27;</span><br></pre></td></tr></table></figure>
-
-<h1 id="生成html文件"><a href="#生成html文件" class="headerlink" title="生成html文件"></a>生成html文件</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-
-<h1 id="上传github"><a href="#上传github" class="headerlink" title="上传github"></a>上传github</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-<h1 id="测试是否成功迁移"><a href="#测试是否成功迁移" class="headerlink" title="测试是否成功迁移"></a>测试是否成功迁移</h1><p>成功迁移</p>
-
+        <h1 id="阿里云通义灵码"><a href="#阿里云通义灵码" class="headerlink" title="阿里云通义灵码"></a>阿里云通义灵码</h1><h2 id="手撕代码"><a href="#手撕代码" class="headerlink" title="手撕代码"></a>手撕代码</h2><p>最大字数组和（动态规划）<br>动态规划关键就是找好动态规划转移方程，难度还可以</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">maxnum</span>(<span class="params">nums</span>):</span><br><span class="line">    cur = best = nums[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> nums[<span class="number">1</span>:]:</span><br><span class="line">        cur = <span class="built_in">max</span>(i, cur+i)</span><br><span class="line">        best = <span class="built_in">max</span>(cur , best)</span><br><span class="line">    <span class="keyword">return</span> best </span><br></pre></td></tr></table></figure>
+<h2 id="面试"><a href="#面试" class="headerlink" title="面试"></a>面试</h2><p>1.简单介绍一下自己和项目<br>2.看到简历中写到构建领域知识库，主要做了哪些工作，有什么难点，怎么解决的<br>3.讲一下项目中自己做的部分的架构<br>4.看到用了计算机视觉小模型，为什么要这么做，直接用大模型有什么问题<br>5.小模型效果怎么样<br>6.60%的准确度是怎么来的<br>7.讲一个智能体（当时讲的日报）<br>8.有做过微调吗<br>9.数据集量怎么样，有没有尝试过数据生成<br>10.有论文吗<br>11.反问：评价一下自己的面试过程以及有没有什么未来的建议<br>建议：项目需要针对一个难点进行亮点创新，并且最后的结果也要是出色的，后续建议多尝试一些微调、RAG等项目，多体会过程</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>感觉第一次有点太老实了，完完全全的诚实没坏处，但是没有讲出来项目的亮点和自己的优势，但感觉面试官还不错，没有深究数据部分</p>
+<h1 id="字节大模型算法"><a href="#字节大模型算法" class="headerlink" title="字节大模型算法"></a>字节大模型算法</h1><h2 id="面试-1"><a href="#面试-1" class="headerlink" title="面试"></a>面试</h2><p>1.简单介绍一下自己和项目<br>2.项目主要做了哪些工作<br>3.看到用可KG增强，主要是增强什么，为什么这么做<br>4.讲一下transformer结构<br>5.有尝试过lora微调吗，讲讲原理<br>6.你们lora微调的参数量是多少<br>7.说一下监督学习和强化学习的区别<br>8.有学过C++么<br>9.有学过操作系统么，说一下进程和线程的区别<br>10.有学过数据库么，讲一下事务的四大特性（下次一定把一致性焊死在脑子里）<br>11.python深拷贝和浅拷贝的区别<br>12.说一下mapreduce的过程过</p>
+<h2 id="手撕代码-1"><a href="#手撕代码-1" class="headerlink" title="手撕代码"></a>手撕代码</h2><p>螺旋矩阵（逆向）<br>思想不难，主要是注意好边界条件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">xuanzhaun</span>(<span class="params">matrix</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> matrix <span class="keyword">or</span> <span class="keyword">not</span> matrix[<span class="number">0</span>]:</span><br><span class="line">        <span class="keyword">return</span> []</span><br><span class="line"></span><br><span class="line">    rows, cols = <span class="built_in">len</span>(matrix), <span class="built_in">len</span>(matrix[<span class="number">0</span>])</span><br><span class="line">    top , bottom = <span class="number">0</span>, rows-<span class="number">1</span></span><br><span class="line">    left, right = <span class="number">0</span>, cols-<span class="number">1</span></span><br><span class="line">    result = []</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> top&lt;=bottom <span class="keyword">and</span> left &lt;= right:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(top, bottom+<span class="number">1</span>):</span><br><span class="line">            result.append(matrix[i][left])</span><br><span class="line">        left += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(left, right+<span class="number">1</span>):</span><br><span class="line">            result.append(matrix[bottom][j])</span><br><span class="line">        bottom -= <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> left&lt;=right:</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span> (bottom, top-<span class="number">1</span>, -<span class="number">1</span>)</span><br><span class="line">                result.append(matrix[i][left])</span><br><span class="line">            right -= <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> top &lt;= bottm:</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span> (right, left+<span class="number">1</span>, -<span class="number">1</span>)</span><br><span class="line">                result.append(matrix[bottom][j])</span><br><span class="line">            top += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line">matrix1 = [</span><br><span class="line">    [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],</span><br><span class="line">    [<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>],</span><br><span class="line">    [<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>,<span class="number">13</span>]</span><br><span class="line">]</span><br><span class="line"><span class="built_in">print</span>(matrix1)</span><br></pre></td></tr></table></figure>
       </section>
 
       
       
         <nav class="article-nav">
+          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
@@ -160,21 +155,6 @@
       
         <a href="/2025/03/11/LeetCode-100/" itemprop="url">
           <h2 class="card-text--title text-ellipsis">LeetCode-100</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
-          
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-    <div class="card-text">
-      
-        <a href="/2024/04/29/LeeCode150/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">LeetCode经典150题</h2>
         </a>
       
       <div class="card-text--row">Older</div>
