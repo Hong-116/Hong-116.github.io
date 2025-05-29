@@ -22,7 +22,7 @@
 
   
 
-  <title>LeetCode经典150题 | Goat or Out</title>
+  <title>LeetCode经典150题 | 知其然并知其所以然</title>
 
   
 
@@ -58,7 +58,7 @@
     <div class="navbar-logo">
       <a href="/">
         
-          Goat or Out
+          知其然并知其所以然
         
       </a>
     </div>
@@ -106,6 +106,11 @@
             <time  class="article-date" datetime="2024-04-29T14:36:02.000Z" itemprop="datePublished">2024-04-29</time>
           </h2>
           
+            <h2 class="last-time">
+              <span>最后更新于</span>
+              <time  class="article-updated" datetime="2025-05-21T16:18:55.535Z" itemprop="dateUpdated">2025-05-22</time>
+            </h2>
+          
           
           <ul class="wrap-list dark">
   
@@ -142,6 +147,14 @@
 <h4 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h4><p>借助中间数组，从头到尾遍历两个数组，比较大小顺次插入，最后中间数组赋值给数组一</p>
 <h4 id="方法三："><a href="#方法三：" class="headerlink" title="方法三："></a>方法三：</h4><p>借助逆指针，从后遍历两个数组，大的放在数组一后面（因为数组一后边有空位置）<br>前提重点：计算任意时刻数组一空位置够不够，m - p1 - 1 + n - p2 - 1 &lt;&#x3D; m + n - p1 - 1</p>
 <hr>
+<h2 id="python语法与函数："><a href="#python语法与函数：" class="headerlink" title="python语法与函数："></a>python语法与函数：</h2><h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">slot[priority] = deque(<span class="built_in">sorted</span>(slot[priority], key=<span class="keyword">lambda</span> x: x[<span class="number">2</span>]))</span><br></pre></td></tr></table></figure>
+<p>表示对一个队列内部进行排序，slot[priority]表示当前队列，key是依据哪个值排序，lambda x: x[2]表示一个函数返回x[2]的值，注意lambda x:必须写，或者用内置函数itemgetter(value)代替，其作用是：这个函数可以从序列（如列表、元组）中取出下标为 2 的元素。（需要导包：from operator import itemgetter）</p>
+<p>del slot[p][min_idx]：删除 slot[p] 队列中下标为 min_idx 的元素</p>
+<h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><p>edges &#x3D; {}:创建了一个空字典</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">edges = &#123;&#125;</span><br><span class="line">edges[<span class="number">0</span>] = [(<span class="number">1</span>, <span class="number">2</span>), (<span class="number">2</span>, <span class="number">3</span>)]  <span class="comment"># 0号节点有两条边，分别到1号和2号节点，权重为2和3</span></span><br><span class="line">edges[<span class="number">1</span>] = [(<span class="number">2</span>, <span class="number">4</span>)]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"></span><br><span class="line">heap = []</span><br><span class="line">heapq.heappush(heap, (<span class="number">2</span>, <span class="string">&#x27;a&#x27;</span>)) <span class="comment"># 插入</span></span><br><span class="line">heapq.heappush(heap, (<span class="number">1</span>, <span class="string">&#x27;b&#x27;</span>))</span><br><span class="line">heapq.heappush(heap, (<span class="number">3</span>, <span class="string">&#x27;c&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(heapq.heappop(heap))  <span class="comment"># 输出 (1, &#x27;b&#x27;)，总是弹出最小的元素</span></span><br></pre></td></tr></table></figure>
+<p>heapq:Python 标准库中的 heapq 模块, 提供了堆队列（优先队列）相关的函数，常用于实现最小堆或最大堆</p>
 
       </section>
 
