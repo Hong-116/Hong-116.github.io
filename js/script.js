@@ -76,6 +76,7 @@ window.addEventListener("DOMContentLoaded", function() {
   }, { passive: true });
 
   initTypewriterEffect();
+  initTocHighlight();
   /** handle lazy bg iamge */
   handleLazyBG();
 });
@@ -135,6 +136,51 @@ function initTypewriterEffect () {
   }
 
   typeNextChar()
+}
+
+function initTocHighlight () {
+  const tocLinks = querySelectorArrs('.widget-toc .widget-body a[href^="#"]')
+  if (!tocLinks.length) return
+
+  const linkMap = tocLinks.map((link) => {
+    const id = decodeURIComponent(link.getAttribute('href') || '').replace(/^#/, '')
+    const heading = id ? document.getElementById(id) : null
+    return heading ? { link, heading } : null
+  }).filter(Boolean)
+
+  if (!linkMap.length) return
+
+  let activeLink = null
+  const setActive = (link) => {
+    if (activeLink === link) return
+    tocLinks.forEach(l => l.classList.remove('toc-active'))
+    if (link) link.classList.add('toc-active')
+    activeLink = link
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    const visible = entries
+      .filter(e => e.isIntersecting)
+      .sort((a, b) => a.target.getBoundingClientRect().top - b.target.getBoundingClientRect().top)
+
+    if (!visible.length) return
+
+    const topMost = visible[0].target
+    const match = linkMap.find(item => item.heading === topMost)
+    if (match) setActive(match.link)
+  }, {
+    root: null,
+    rootMargin: '-20% 0px -60% 0px',
+    threshold: [0, 0.1, 0.4]
+  })
+
+  linkMap.forEach(({ heading }) => observer.observe(heading))
+
+  window.addEventListener('hashchange', () => {
+    const id = decodeURIComponent(location.hash.replace(/^#/, ''))
+    const match = linkMap.find(item => item.heading.id === id)
+    if (match) setActive(match.link)
+  })
 }
 
 
