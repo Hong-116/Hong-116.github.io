@@ -22,7 +22,7 @@
 
   
 
-  <title>最基础的Markdown（从hello-world扒下来的） | 知其然并知其所以然</title>
+  <title>LeetCode经典150题 | 知其然并知其所以然</title>
 
   
 
@@ -96,11 +96,11 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap" data-type-text="最基础的Markdown（从hello-world扒下来的）">最基础的Markdown（从hello-world扒下来的）</h1>
+          <h1 class="title-wrap" data-type-text="LeetCode经典150题">LeetCode经典150题</h1>
           <h2 class="title-sub-wrap">
             <strong>Hong-116</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2024-04-25T14:54:48.000Z" itemprop="datePublished">2024-04-25</time>
+            <time  class="article-date" datetime="2025-11-29T12:33:12.122Z" itemprop="datePublished">2025-11-29</time>
           </h2>
           
           
@@ -132,11 +132,22 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <p>hello-world里面的Markdown基础语法</p>
-<h2 id="名字被卡了好久的二级标题"><a href="#名字被卡了好久的二级标题" class="headerlink" title="名字被卡了好久的二级标题"></a>名字被卡了好久的二级标题</h2><h3 id="写文字"><a href="#写文字" class="headerlink" title="写文字"></a>写文字</h3><p>直接写，写带链接的内容：</p>
-<p>[内容](该内容网址)</p>
-<p>比如：这是我的博客：<a href="https://hong-116.github.io/">Goat or Out</a></p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>边写边学这个Markdown吧</p>
+        <p>面试经典150题的一些收获</p>
+<h1 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h1><hr>
+<h2 id="1-合并两个有序数组"><a href="#1-合并两个有序数组" class="headerlink" title="1.合并两个有序数组"></a>1.合并两个有序数组</h2><p>一开始的思路：读完题单纯认为要保证非递减的结果，就只需要把num2里的东西直接放到num1后面，因为初始数组非递减，所以最后肯定也是非递减，但题里的非递减要的效果其实是递增的结果，所以就索性加个快速排序算法，快速排序算法也忘得差不多了。。。</p>
+<p>补知识：选定基准元素（头元素）；<br>       尾指针对应元素大于基准元素就左移，小于就换到基准元素位置；<br>       头指针对应元素小于基准元素就右移，大于就插到刚才尾指针位置；<br>       头尾指针重合结束，基准元素插到最后头（尾）指针位置；<br>       每次确定一个元素位置，递归进行左右分区；<br>       分区大小为1或者0结束递归<br>（<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43250623/article/details/88931925">快速排序</a>）</p>
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><h4 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h4><p>思路一致，先插入然后直接排序算法</p>
+<h4 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h4><p>借助中间数组，从头到尾遍历两个数组，比较大小顺次插入，最后中间数组赋值给数组一</p>
+<h4 id="方法三："><a href="#方法三：" class="headerlink" title="方法三："></a>方法三：</h4><p>借助逆指针，从后遍历两个数组，大的放在数组一后面（因为数组一后边有空位置）<br>前提重点：计算任意时刻数组一空位置够不够，m - p1 - 1 + n - p2 - 1 &lt;&#x3D; m + n - p1 - 1</p>
+<hr>
+<h2 id="python语法与函数："><a href="#python语法与函数：" class="headerlink" title="python语法与函数："></a>python语法与函数：</h2><h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">slot[priority] = deque(<span class="built_in">sorted</span>(slot[priority], key=<span class="keyword">lambda</span> x: x[<span class="number">2</span>]))</span><br></pre></td></tr></table></figure>
+<p>表示对一个队列内部进行排序，slot[priority]表示当前队列，key是依据哪个值排序，lambda x: x[2]表示一个函数返回x[2]的值，注意lambda x:必须写，或者用内置函数itemgetter(value)代替，其作用是：这个函数可以从序列（如列表、元组）中取出下标为 2 的元素。（需要导包：from operator import itemgetter）</p>
+<p>del slot[p][min_idx]：删除 slot[p] 队列中下标为 min_idx 的元素</p>
+<h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><p>edges &#x3D; {}:创建了一个空字典</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">edges = &#123;&#125;</span><br><span class="line">edges[<span class="number">0</span>] = [(<span class="number">1</span>, <span class="number">2</span>), (<span class="number">2</span>, <span class="number">3</span>)]  <span class="comment"># 0号节点有两条边，分别到1号和2号节点，权重为2和3</span></span><br><span class="line">edges[<span class="number">1</span>] = [(<span class="number">2</span>, <span class="number">4</span>)]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"></span><br><span class="line">heap = []</span><br><span class="line">heapq.heappush(heap, (<span class="number">2</span>, <span class="string">&#x27;a&#x27;</span>)) <span class="comment"># 插入</span></span><br><span class="line">heapq.heappush(heap, (<span class="number">1</span>, <span class="string">&#x27;b&#x27;</span>))</span><br><span class="line">heapq.heappush(heap, (<span class="number">3</span>, <span class="string">&#x27;c&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(heapq.heappop(heap))  <span class="comment"># 输出 (1, &#x27;b&#x27;)，总是弹出最小的元素</span></span><br></pre></td></tr></table></figure>
+<p>heapq:Python 标准库中的 heapq 模块, 提供了堆队列（优先队列）相关的函数，常用于实现最小堆或最大堆</p>
 
       </section>
 
@@ -149,8 +160,8 @@
     
     <div class="card-text">
       
-        <a href="/2024/04/29/LeeCode150/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">LeetCode经典150题</h2>
+        <a href="/2025/11/29/test/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">最基础的Markdown（从hello-world扒下来的）</h2>
         </a>
       
       <div class="card-text--row">Newer</div>
@@ -164,8 +175,8 @@
     
     <div class="card-text">
       
-        <a href="/2024/04/23/hello-world/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">Hello World</h2>
+        <a href="/2025/03/11/LeetCode-100/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">LeetCode-100</h2>
         </a>
       
       <div class="card-text--row">Older</div>
@@ -252,7 +263,7 @@
     <span>TABLE OF CONTENTS</span>
   </div>
   <div class="widget-body">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8D%E5%AD%97%E8%A2%AB%E5%8D%A1%E4%BA%86%E5%A5%BD%E4%B9%85%E7%9A%84%E4%BA%8C%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">名字被卡了好久的二级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%99%E6%96%87%E5%AD%97"><span class="toc-number">1.1.</span> <span class="toc-text">写文字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.2.</span> <span class="toc-text">总结</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Python"><span class="toc-number">1.</span> <span class="toc-text">Python</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84"><span class="toc-number">1.1.</span> <span class="toc-text">1.合并两个有序数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3"><span class="toc-number">1.1.1.</span> <span class="toc-text">题解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#python%E8%AF%AD%E6%B3%95%E4%B8%8E%E5%87%BD%E6%95%B0%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">python语法与函数：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1"><span class="toc-number">1.2.1.</span> <span class="toc-text">1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2"><span class="toc-number">1.2.2.</span> <span class="toc-text">2</span></a></li></ol></li></ol></li></ol>
   </div>
 </section>
 
