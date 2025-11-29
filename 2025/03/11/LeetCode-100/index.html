@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#3367D6"/>
+  <link rel="apple-touch-icon" href="/icons-192.png">
+  <link rel="manifest" href="/manifest.json">
+  
+  <meta name="generator" content="Hexo 7.3.0">
+
+  
+
+  
+
+  
+    <meta name="author" content="Hong-116">
+  
+
+  
+
+  
+
+  <title>LeetCode-100 | 知其然并知其所以然</title>
+
+  
+
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+
+  <!--mathjax latex数学公式显示支持-->
+  
+  
+
+  
+
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+  <div class="root-container">
+    
+<!-- header container -->
+<header class="header-container post">
+  
+    <div class="post-image" style="background-image: url(/assets/bg.jpg)"></div>
+  
+
+  <!-- navbar -->
+<nav class="navbar">
+  <div class="navbar-content">
+    <!-- logo -->
+    <div class="navbar-logo">
+      <a href="/">
+        
+          知其然并知其所以然
+        
+      </a>
+    </div>
+    <!-- link -->
+    <div class="navbar-link">
+      <div class="navbar-btn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="navbar-list">
+        
+          <li class="navbar-list-item"><a href="/">首页</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <div class="header-content">
+      <div class="post-text layout-block">
+        <div class="layout-margin">
+          <h1 class="title-wrap" data-type-text="LeetCode-100">LeetCode-100</h1>
+          <h2 class="title-sub-wrap">
+            <strong>Hong-116</strong>
+            <span>发布于</span>
+            <time  class="article-date" datetime="2025-03-11T06:49:04.000Z" itemprop="datePublished">2025-03-11</time>
+          </h2>
+          
+            <h2 class="last-time">
+              <span>最后更新于</span>
+              <time  class="article-updated" datetime="2025-03-21T07:21:16.000Z" itemprop="dateUpdated">2025-03-21</time>
+            </h2>
+          
+          
+          <ul class="wrap-list dark">
+  
+</ul>
+          <ul class="wrap-list dark">
+  
+</ul>
+        </div>
+      </div>
+    </div>
+  
+
+  
+  
+  
+</header>
+
+
+    <!-- 文章 -->
+
+<!-- 文章内容 -->
+<div class="body-container">
+  <article class="content-container layout-block post-container">
+    <div class="article-info">
+      
+      
+      
+      
+      <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
+        <h1 id="1-两数之和-简单"><a href="#1-两数之和-简单" class="headerlink" title="1.两数之和(简单)"></a>1.两数之和(简单)</h1><h2 id="题目：给定一个整数数组-nums-和一个整数目标值-target，请你在该数组中找出-和为目标值-target-的那-两个整数，并返回它们的数组下标。"><a href="#题目：给定一个整数数组-nums-和一个整数目标值-target，请你在该数组中找出-和为目标值-target-的那-两个整数，并返回它们的数组下标。" class="headerlink" title="题目：给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target 的那 两个整数，并返回它们的数组下标。"></a>题目：给定一个整数数组 <code>nums</code> 和一个整数目标值 <code>target</code>，请你在该数组中找出 <strong>和为目标值</strong> <code>target</code> 的那 <strong>两个整数</strong>，并返回它们的<strong>数组下标</strong>。</h2><h2 id="解法一："><a href="#解法一：" class="headerlink" title="解法一："></a>解法一：</h2><p>枚举遍历，对于数i只需要去看i之后的数，因为i之前的数在遍历时已经与i比较过，时间复杂度O(N^2)</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">twosum</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i&lt;nums.<span class="built_in">size</span>(); ++i)&#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> j = i<span class="number">+1</span>; j&lt;nums.<span class="built_in">size</span>(); ++j)&#123;</span><br><span class="line">                    <span class="keyword">if</span>(nums[i]+ nums[j]== target)&#123;</span><br><span class="line">                        <span class="keyword">return</span> &#123;i,j&#125;;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span>&#123;&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="解法二："><a href="#解法二：" class="headerlink" title="解法二："></a>解法二：</h2><p>构建哈希表，直接哈希表搜索，时间复杂度O(N)</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">twosum</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp;nums, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">            unordered_map&lt;<span class="type">int</span>, <span class="type">int</span>&gt; hashtable;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i&lt;nums.<span class="built_in">size</span>(); ++i)&#123;</span><br><span class="line">                <span class="keyword">auto</span> it = hashtable.<span class="built_in">find</span>(target - nums[i]);</span><br><span class="line">                <span class="keyword">if</span>(it != hashtable.<span class="built_in">end</span>())&#123;</span><br><span class="line">                    <span class="keyword">return</span> &#123;it-&gt;second, i&#125;</span><br><span class="line">                &#125;</span><br><span class="line">                hashtable[nums[i]]=i;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span>&#123;&#125;; </span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>unordered_map&lt;int, int&gt; hashtable;</code>是 C++ 标准库中的哈希表容器，<code>&lt;int,int&gt;</code>表明这个哈希表的键和值都是整数类型.<br><code>auto</code>是 C++11 引入的类型推导关键字，编译器会根据初始化表达式自动推断 it 的类型，这里 it 的类型是 <code>unordered_map&lt;int, int&gt;::iterator</code>，即哈希表的迭代器。<br><code>it-&gt;second</code>通过迭代器 it 访问哈希表中对应元素的值，也就是补数在数组中的索引。在 C++ 中，<code>unordered_map</code>的每个元素都是一个 <code>std::pair</code> 对象，这个对象包含两个成员：<code>first</code> 和 <code>second</code>。<code>first</code> 代表键（key），<code>second</code> 代表值（value）。<br><code>it</code> 是指向 <code>unordered_map</code> 中某个元素的迭代器，<code>it-&gt;second</code> 等价于 <code>(*it).second</code>，它的作用是访问迭代器 <code>it</code> 所指向元素的 <code>second</code> 成员，也就是该键值对中的值。<br><code>(*it).second</code> 表示先对迭代器 <code>it</code> 进行解引用操作，得到其所指向的 <code>std::pair</code> 对象，接着访问该 <code>std::pair</code> 对象的 <code>second</code> 成员。</p>
+<h1 id="2-字母异位词分组（中等）"><a href="#2-字母异位词分组（中等）" class="headerlink" title="2.字母异位词分组（中等）"></a>2.字母异位词分组（中等）</h1><h2 id="题目：给你一个字符串数组，请你将-字母异位词-组合在一起。可以按任意顺序返回结果列表。字母异位词-是由重新排列源单词的所有字母得到的一个新单词。"><a href="#题目：给你一个字符串数组，请你将-字母异位词-组合在一起。可以按任意顺序返回结果列表。字母异位词-是由重新排列源单词的所有字母得到的一个新单词。" class="headerlink" title="题目：给你一个字符串数组，请你将 字母异位词 组合在一起。可以按任意顺序返回结果列表。字母异位词 是由重新排列源单词的所有字母得到的一个新单词。"></a>题目：给你一个字符串数组，请你将 <strong>字母异位词</strong> 组合在一起。可以按任意顺序返回结果列表。<strong>字母异位词</strong> 是由重新排列源单词的所有字母得到的一个新单词。</h2><h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><p>两个字符串为字母异位词说明两个字符串组成元素完全相同，只是字母的排序不同，借助哈希表就需要为属于同一组的字母异位词找一个相同的索引key，因此可以将每个字符串字母排序，相同的字母异位词排序后的字符串是相同的；第二种解法就是同一组的字母异位词中每个字母的计数是相同的，因此哈希表的key可以用一个字母计数的<strong>数组</strong></p>
+<h2 id="解法一：-1"><a href="#解法一：-1" class="headerlink" title="解法一："></a>解法一：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        vector&lt;vector&lt;string&gt;&gt; <span class="built_in">groupAnagrams</span>(vector&lt;string&gt;&amp;strs)&#123;</span><br><span class="line">            unordered_map&lt;string vector&lt;string&gt;&gt; SortMap;</span><br><span class="line">            <span class="keyword">for</span>(string&amp;str: strs)&#123;</span><br><span class="line">                string key  = str;</span><br><span class="line">                <span class="built_in">sort</span>(key.<span class="built_in">begin</span>(),key.<span class="built_in">end</span>());</span><br><span class="line">                SortMap[key].<span class="built_in">emplace_back</span>(str);</span><br><span class="line">            &#125;</span><br><span class="line">            vector&lt;vector&lt;string&gt;&gt; ans;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">auto</span> it = SortMap.<span class="built_in">begin</span>(); it!=SortMap.<span class="built_in">end</span>(); ++it)&#123;</span><br><span class="line">                ans.<span class="built_in">emplace_black</span>(it-&gt;second);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> ans;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>vector&lt;vector&lt;string&gt;&gt;</code>: 意味着函数将返回一个二维字符串向量。每个内层向量包含一组字母异位词。<br><code>sort(key.begin(), key.end());</code>：对 key 字符串进行排序。因为字母异位词排序后得到的字符串是相同的，所以可以用排序后的字符串作为键来分组。<br><code>emplace_back</code> 是 C++ 标准库容器（如 std::vector、std::deque 等）提供的一个成员函数，用于在容器的末尾直接构造并插入一个新元素。<br><code>emplace_back(str)</code> 会在这个字符串向量的末尾直接构造并插入一个新元素，这个新元素就是 str。具体来说，它会使用 str 作为参数来构造一个新的 string 对象，并将其添加到向量的末尾。<br>时间复杂度：<code>O(nklogk)</code>，其中 <code>n</code> 是 <code>strs</code> 中的字符串的数量，<code>k</code> 是 <code>strs</code> 中的字符串的的最大长度。需要遍历 <code>n</code> 个字符串，对于每个字符串，需要 <code>O(klogk)</code> 的时间进行排序以及 <code>O(1)</code> 的时间更新哈希表，因此总时间复杂度是 <code>O(nklogk)</code>。<br>空间复杂度：<code>O(nk)</code>，其中 <code>n</code> 是 <code>strs</code> 中的字符串的数量，<code>k</code> 是 <code>strs</code> 中的字符串的的最大长度。需要用哈希表存储全部字符串。</p>
+<h2 id="解法二：自定义一个哈希函数"><a href="#解法二：自定义一个哈希函数" class="headerlink" title="解法二：自定义一个哈希函数"></a>解法二：自定义一个哈希函数</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        vector&lt;vector&lt;string&gt;&gt; <span class="built_in">groupAnagrams</span> (vector&lt;string&gt;&amp; strs)&#123;</span><br><span class="line">            <span class="keyword">auto</span> arrayhash = [fn = hash&lt;<span class="type">int</span>&gt;] (<span class="type">const</span> array&lt;<span class="type">int</span>, <span class="number">26</span>&gt;&amp; arr) -&gt; <span class="type">sizr_t</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="built_in">accumulate</span>(arr.<span class="built_in">begin</span>(), arr.<span class="built_in">end</span>(), <span class="number">0u</span>, [&amp;](<span class="type">size_t</span> acc, <span class="type">int</span> num)&#123;</span><br><span class="line">                    <span class="built_in">return</span> (arr&lt;&lt;<span class="number">1</span> ^ <span class="built_in">fn</span>(num));</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;;</span><br><span class="line">            unordered_map&lt;array&lt;<span class="type">int</span>, 26&gt;, vector&lt;string&gt;, decltypt(arrayhash)&gt; <span class="built_in">mp</span>(<span class="number">0</span>, arrayhash);</span><br><span class="line">            <span class="keyword">for</span>(string&amp;str:strs)&#123;</span><br><span class="line">                array&lt;<span class="type">int</span> , 26&gt; counts&#123;&#125;;</span><br><span class="line">                <span class="type">int</span> length = str.length;</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i&lt;length; ++i&gt;)&#123;</span><br><span class="line">                    counts[str[i] - <span class="string">&#x27;a&#x27;</span>] ++; </span><br><span class="line">                &#125;;</span><br><span class="line">                mp[counts].<span class="built_in">emplace_back</span>(str);</span><br><span class="line">            &#125;</span><br><span class="line">            vector&lt;vector&lt;string&gt;&gt; ans;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">auto</span> it = mp.<span class="built_in">begin</span>(); it!=mp.<span class="built_in">end</span>(); ++it)&#123;</span><br><span class="line">                ans.<span class="built_in">emplace_back</span>(it-&gt;second);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Lambda表达式：<code>auto arrayHash = [...] (...) -&gt; ... &#123;... &#125;</code>是一个 Lambda 表达式，用于定义一个自定义的哈希函数。<code>arrayHash</code>是这个哈希函数的名称，<code>auto</code>让编译器自动推导函数的类型。<br>捕获列表：<code>hash&lt;int&gt;&#123;&#125;</code> 是 <code>std::hash&lt;int&gt;</code> 类型的一个实例，<code>std::hash</code> 是 C++ 标准库提供的模板类，用于生成哈希值。这里创建了一个可以对 <code>int</code> 类型生成哈希值的对象。<br>参数类型<code>(const array&lt;int, 26&gt;&amp; arr)</code>：该哈希函数接收一个 <code>const array&lt;int, 26&gt;&amp;</code> 类型的参数 <code>arr</code>，也就是一个长度为 26 的常量整数数组的引用。在这个代码里，这个数组用于记录每个字母的出现次数。<br>返回类型<code>-&gt; size_t</code>: 明确了这个哈希函数的返回类型是 <code>size_t</code>，<code>size_t</code> 是一种无符号整数类型，常用于表示对象的大小或者索引。哈希函数通常会返回 <code>size_t</code> 类型的值，以作为哈希表的索引。</p>
+<h1 id="3-最长连续序列（中等）"><a href="#3-最长连续序列（中等）" class="headerlink" title="3.最长连续序列（中等）"></a>3.最长连续序列（中等）</h1><h2 id="题目：给定一个未排序的整数数组-nums-，找出数字连续的最长序列（不要求序列元素在原数组中连续）的长度。请你设计并实现时间复杂度为-O-n-的算法解决此问题。"><a href="#题目：给定一个未排序的整数数组-nums-，找出数字连续的最长序列（不要求序列元素在原数组中连续）的长度。请你设计并实现时间复杂度为-O-n-的算法解决此问题。" class="headerlink" title="题目：给定一个未排序的整数数组 nums ，找出数字连续的最长序列（不要求序列元素在原数组中连续）的长度。请你设计并实现时间复杂度为 O(n) 的算法解决此问题。"></a>题目：给定一个未排序的整数数组 nums ，找出数字连续的最长序列（不要求序列元素在原数组中连续）的长度。请你设计并实现时间复杂度为 O(n) 的算法解决此问题。</h2><h2 id="解法："><a href="#解法：" class="headerlink" title="解法："></a>解法：</h2><p>暴力枚举对于每个数x，用哈希判断x+1；x+2,…，最后选择最长，但是时间复杂度超出，简单的方法就是对于一个数x，判断x-1是否存在，存在则这个数不用进入循环。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="function"><span class="type">int</span> <span class="title">longestConsecutive</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span></span>&#123;</span><br><span class="line">            unordered_set&lt;<span class="type">int</span>&gt; num_set;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">const</span> <span class="type">int</span>&amp; num : nums)&#123;</span><br><span class="line">                num_set.<span class="built_in">insert</span>(num);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="type">int</span> longestlength = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span>(<span class="type">const</span> &amp;<span class="type">int</span> num: num_set)&#123;</span><br><span class="line">                <span class="keyword">if</span>(!num_set.<span class="built_in">count</span>(num - <span class="number">1</span>))&#123;</span><br><span class="line">                    <span class="type">int</span> currentnum = num;</span><br><span class="line">                    <span class="type">int</span> currentlength = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">                    <span class="keyword">while</span>(num_set.<span class="built_in">count</span>(num + <span class="number">1</span>))&#123;</span><br><span class="line">                        currentnum = currentnum <span class="number">+1</span>;</span><br><span class="line">                        currentlength = currentlength <span class="number">+1</span>;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    longestlength = <span class="built_in">max</span>(longestlength, currentlength);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> longestlength;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>unordered_set&lt;int&gt; num_set;</code>：定义了一个 <code>unordered_set</code> 类型的变量 <code>num_set</code>，<code>unordered_set</code> 是 C++ 标准库中的哈希集合，它可以存储唯一的元素，并且支持快速的查找操作，平均时间复杂度为O(1)。这里使用它来存储数组 <code>nums</code> 中的所有元素。<code>unorder_set</code>可以<strong>自动去重</strong>.<br><code>const int&amp; num</code>：表示常量引用，使用 <code>const</code> 修饰符可以确保在引用对象的过程中不会修改对象的值。<br><code>count</code> 函数的作用是在 <code>unordered_set</code> 中查找指定元素的出现次数。由于 <code>unordered_set</code> 里的元素是唯一的，所以 <code>count</code> 函数的返回值只会是0或者1。0代表元素不存在在哈希数组中，1代表元素存在哈希数组中。</p>
+<h1 id="4-移动零（简单）"><a href="#4-移动零（简单）" class="headerlink" title="4.移动零（简单）"></a>4.移动零（简单）</h1><h2 id="题目：给定一个数组-nums，编写一个函数将所有-0-移动到数组的末尾，同时保持非零元素的相对顺序。请注意-，必须在不复制数组的情况下原地对数组进行操作。"><a href="#题目：给定一个数组-nums，编写一个函数将所有-0-移动到数组的末尾，同时保持非零元素的相对顺序。请注意-，必须在不复制数组的情况下原地对数组进行操作。" class="headerlink" title="题目：给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。请注意 ，必须在不复制数组的情况下原地对数组进行操作。"></a>题目：给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。请注意 ，必须在不复制数组的情况下原地对数组进行操作。</h2><h2 id="解法：-1"><a href="#解法：-1" class="headerlink" title="解法："></a>解法：</h2><p>双指针都从起始位置开始，让所有非零都在左指针左边，所有0都在右指针右边，如果保证左指针一定指在0，因为如果数组中都是非0数，那么双指针永远在同时前进，并且自己跟自己交换，而只有在0时，左指针会停下，右指针会往前走。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="function"><span class="type">void</span> <span class="title">moveZero</span> <span class="params">(vector&lt;<span class="type">int</span>&gt;&amp;nums)</span></span>&#123;</span><br><span class="line">            <span class="type">int</span> n = nums.<span class="built_in">size</span>(), left = <span class="number">0</span>, right = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span>(right&lt;n)&#123;</span><br><span class="line">                <span class="keyword">if</span>(nums[right])&#123;</span><br><span class="line">                    <span class="built_in">swap</span>(numsp[left], nums[right]);</span><br><span class="line">                    left++;</span><br><span class="line">                &#125;</span><br><span class="line">                right++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>void</code>表示不返回任何类型。</p>
+<h1 id="盛最多水的容器（中等）"><a href="#盛最多水的容器（中等）" class="headerlink" title="盛最多水的容器（中等）"></a>盛最多水的容器（中等）</h1><h2 id="题目：给定一个长度为-n-的整数数组-height-。有-n-条垂线，第-i-条线的两个端点是-i-0-和-i-height-i-。找出其中的两条线，使得它们与-x-轴共同构成的容器可以容纳最多的水。返回容器可以储存的最大水量。说明：你不能倾斜容器。"><a href="#题目：给定一个长度为-n-的整数数组-height-。有-n-条垂线，第-i-条线的两个端点是-i-0-和-i-height-i-。找出其中的两条线，使得它们与-x-轴共同构成的容器可以容纳最多的水。返回容器可以储存的最大水量。说明：你不能倾斜容器。" class="headerlink" title="题目：给定一个长度为 n 的整数数组 height 。有 n 条垂线，第 i 条线的两个端点是 (i, 0) 和 (i, height[i])。找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。返回容器可以储存的最大水量。说明：你不能倾斜容器。"></a>题目：给定一个长度为 n 的整数数组 height 。有 n 条垂线，第 i 条线的两个端点是 (i, 0) 和 (i, height[i])。找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。返回容器可以储存的最大水量。说明：你不能倾斜容器。</h2><h2 id="解法：-2"><a href="#解法：-2" class="headerlink" title="解法："></a>解法：</h2><p>双指针一头一尾表示水桶的底有多宽，而高度要用短板效应，取小的高度，并且要将短的高度的指针移动去寻找更长的高度，<strong>关键在于证明短板指针移动是正确的</strong>。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maxArea</span><span class="params">(vector&lt;<span class="type">int</span>&gt; &amp; height)</span></span>&#123;</span><br><span class="line">        <span class="type">int</span> left = <span class="number">0</span>, right = height.<span class="built_in">size</span>()<span class="number">-1</span>;</span><br><span class="line">        <span class="type">int</span> maxsize = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(left&lt;right)&#123;</span><br><span class="line">            <span class="type">int</span> currentheight = (height[left]&lt;=height[right]) ? height[left] : height[right];</span><br><span class="line">            <span class="type">int</span> currentsize = currentheight*(right - left);</span><br><span class="line">            maxsize = <span class="built_in">max</span>(maxsize, currentsize);</span><br><span class="line">            <span class="keyword">if</span>(currentheight == height[left])&#123;</span><br><span class="line">                left++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                right--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxsize;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="三数之和（中等）"><a href="#三数之和（中等）" class="headerlink" title="三数之和（中等）"></a>三数之和（中等）</h1><h2 id="题目：给你一个整数数组-nums-，判断是否存在三元组-nums-i-nums-j-nums-k-满足-i-j、i-k-且-j-k-，同时还满足-nums-i-nums-j-nums-k-0-。请你返回所有和为-0-且不重复的三元组。注意：答案中不可以包含重复的三元组。"><a href="#题目：给你一个整数数组-nums-，判断是否存在三元组-nums-i-nums-j-nums-k-满足-i-j、i-k-且-j-k-，同时还满足-nums-i-nums-j-nums-k-0-。请你返回所有和为-0-且不重复的三元组。注意：答案中不可以包含重复的三元组。" class="headerlink" title="题目：给你一个整数数组 nums ，判断是否存在三元组 [nums[i], nums[j], nums[k]] 满足 i !&#x3D; j、i !&#x3D; k 且 j !&#x3D; k ，同时还满足 nums[i] + nums[j] + nums[k] &#x3D;&#x3D; 0 。请你返回所有和为 0 且不重复的三元组。注意：答案中不可以包含重复的三元组。"></a>题目：给你一个整数数组 nums ，判断是否存在三元组 [nums[i], nums[j], nums[k]] 满足 i !&#x3D; j、i !&#x3D; k 且 j !&#x3D; k ，同时还满足 nums[i] + nums[j] + nums[k] &#x3D;&#x3D; 0 。请你返回所有和为 0 且不重复的三元组。注意：答案中不可以包含重复的三元组。</h2><h2 id="解法：-3"><a href="#解法：-3" class="headerlink" title="解法："></a>解法：</h2><p>首先枚举三次for循环是可行的，但是时间复杂度太大，而且会有很多重复查找的过程，因此可以先保证数据从小到大有序排列，然后再基于三次循环大框架，每次要检验该指针对应数字是否与上一次是重复的，重复可以跳过，然后定义好头指针后，可以基于两数之和处理，即转化成查找剩余两数和符合目标值的情况，由于数组有序，第三个指针从尾开始，如果两数和大于目标值，那就让尾指针缩小，让和数降低。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">threenum</span> (vector&lt;<span class="type">int</span>&gt;&amp; nums)&#123;</span><br><span class="line">            <span class="type">int</span> n = nums.<span class="built_in">size</span>();</span><br><span class="line">            <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line">            vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; ans;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> first = <span class="number">0</span>; first &lt; n; ++first)&#123;</span><br><span class="line">                <span class="keyword">if</span>(first&gt;<span class="number">0</span> &amp;&amp; nums[first] == nums[first - <span class="number">1</span>])&#123;</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="type">int</span> third = n<span class="number">-1</span>;</span><br><span class="line">                <span class="type">int</span> target = -nums[first];</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> second = first + <span class="number">1</span>; second &lt; n; ++second)&#123;</span><br><span class="line">                    <span class="keyword">if</span>(second &gt; first + <span class="number">1</span> &amp;&amp; nums[second] == nums[second - <span class="number">1</span>])&#123;</span><br><span class="line">                        <span class="keyword">continue</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">while</span>(second &lt; third &amp;&amp; nums[second] + nums[third] &gt; target)&#123;</span><br><span class="line">                        -- third;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">if</span> (second == third)&#123;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">if</span>(nums[second] + nums[third] == target)&#123;</span><br><span class="line">                        ans.<span class="built_in">push_back</span>(&#123;nums[first], nums[second], nums[third]&#125;);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> ans;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><code>push_back()</code>函数的用法函数将一个新的元素加到vector的最后面，位置为当前最后一个元素的下一个元素,<code>push_back()</code> 在Vector最后添加一个元素（参数为要插入的值）<br><code>pop_back()</code> 移除最后一个元素<br><code>clear()</code>  清空所有元素<br><code>empty()</code> 判断vector是否为空，如果返回true为空<br><code>erase()</code> 删除指定元素</p>
+<h1 id="接雨水（困难）"><a href="#接雨水（困难）" class="headerlink" title="接雨水（困难）"></a>接雨水（困难）</h1><h2 id="题目：给定-n-个非负整数表示每个宽度为-1-的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。"><a href="#题目：给定-n-个非负整数表示每个宽度为-1-的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。" class="headerlink" title="题目：给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。"></a>题目：给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。</h2>
+      </section>
+
+      
+      
+        <nav class="article-nav">
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2025/05/15/bigmodel_Face_meridian/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">大模型面经</h2>
+        </a>
+      
+      <div class="card-text--row">Newer</div>
+    </div>
+  </article>
+</div>
+          
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2025/03/11/blog-shangchuan/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">博客上传</h2>
+        </a>
+      
+      <div class="card-text--row">Older</div>
+    </div>
+  </article>
+</div>
+          
+        </nav>
+      
+
+      <section class="page-message-container layout-padding">
+        
+
+
+  
+  
+
+  
+  
+
+
+      </section>
+    </div>
+    <div class="widget-info">
+      <section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-body">
+    
+      <img src="/assets/headimage.jpg" class="soft-size--round soft-style--box" alt="Hong-116">
+    
+    
+      <h2>Hong-116</h2>
+    
+    
+      <p>明天一定更新</p>
+    
+
+    <div class="count-box">
+      <div class="count-box--item">
+        <svg class="icon icon-article" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M240.51564747 647.74217627h196.07203239c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806V165.10332731c0-33.18142087-30.16492806-60.32985613-60.32985612-60.32985611H245.04038668C225.43318342 104.7734712 210.35071939 119.85593522 210.35071939 139.46313845V617.57724821c0 16.59071043 13.57421762 30.16492806 30.16492808 30.16492806z m663.62841731-452.47392089v482.63884894c0 33.18142087-27.14843525 60.32985613-60.32985612 60.32985613H180.18579134c-33.18142087 0-60.32985613-27.14843525-60.32985612-60.32985613V195.26825538c-49.77213131 0-90.49478418 40.72265287-90.49478417 90.49478417v452.4739209c0 49.77213131 40.72265287 90.49478418 90.49478417 90.49478417h286.56681657c16.59071043 0 30.16492806 13.57421762 30.16492807 30.16492807s13.57421762 30.16492806 30.16492805 30.16492806h90.49478418c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806s13.57421762-30.16492806 30.16492807-30.16492807h286.56681657c49.77213131 0 90.49478418-40.72265287 90.49478417-90.49478417V285.76303955c0-49.77213131-40.72265287-90.49478418-90.49478417-90.49478417zM587.41232014 647.74217627h191.54729318c19.60720323 0 34.68966726-15.08246403 34.68966729-34.68966727V134.93839925c0-16.59071043-13.57421762-30.16492806-30.16492808-30.16492805H617.57724821c-30.16492806 0-60.32985613 27.14843525-60.32985612 60.32985611v452.4739209c0 16.59071043 13.57421762 30.16492806 30.16492805 30.16492806z" fill="currentColor"></path>
+</svg>
+        <span>7</span>
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+        0
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+        0
+      </div>
+    </div>
+  </div>
+</section>
+
+      
+
+      
+
+      <section class="widget-categories widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+      <span>CATEGORIES</span>
+  </div>
+  <div class="widget-body">
+    <ul class="categories-list">
+      
+    </ul>
+  </div>
+</section>
+
+      <section class="widget-tags widget-item  layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+    <span>TAGS</span>
+  </div>
+  <div class="widget-body">
+    <div class="tags-cloud">
+      
+    </div>
+  </div>
+</section>
+    </div>
+  </article>
+</div>
+
+    <!-- footer container -->
+<footer id="footer" class="footer">
+  <div class="footer-container">
+    
+    <div class="social-icons">
+      
+        
+      
+        
+      
+        
+      
+        
+          <a href="https://github.com/Hong-116/" class="soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-github" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M64.6 512c0 195.6 125.4 361.9 300.1 422.9 23.5 5.9 19.9-10.8 19.9-22.2v-77.6c-135.8 15.9-141.3-74-150.5-89-18.5-31.5-61.9-39.5-49-54.5 31-15.9 62.5 4 98.9 58 26.4 39.1 77.9 32.5 104.1 26 5.7-23.5 17.9-44.5 34.7-60.9-140.7-25.2-199.4-111.1-199.4-213.3 0-49.5 16.4-95.1 48.4-131.8-20.4-60.6 1.9-112.4 4.9-120.1 58.2-5.2 118.5 41.6 123.3 45.3 33.1-8.9 70.8-13.7 112.9-13.7 42.4 0 80.3 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.4-43.9 2.9 7.7 24.7 58.3 5.5 118.1 32.5 36.8 49 82.8 49 132.4 0 102.3-59 188.3-200.2 213.2 23.5 23.3 38.1 55.5 38.1 91.1v112.7c0.8 9 0 17.9 15.1 17.9C832.7 877 960.4 709.4 960.4 512.1c0-247.5-200.6-447.9-447.9-447.9C265 64.1 64.6 264.5 64.6 512z"></path>
+</svg>
+          </a>
+        
+      
+    </div>
+     
+    <p>&copy; 2025 <a href="/" target="_blank">Hong-116</a></p>
+
+    
+
+    <p>Powered by <a href="https://hexo.io" target="_blank" rel="noopener noreferrer">Hexo</a> Theme - <a href="https://github.com/miiiku/flex-block" target="_blank" rel="noopener noreferrer author">flex-block</a></p>
+
+    <p>
+      <a href="javascript:;" id="theme-light">🌞 浅色</a>
+      <a href="javascript:;" id="theme-dark">🌛 深色</a>
+      <a href="javascript:;" id="theme-auto">🤖️ 自动</a>
+    </p>
+  </div>
+</footer>
+  </div>
+
+  <div class="back-to-top-fixed soft-size--round soft-style--box">
+    <svg class="icon icon-back-to-top" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <path d="M725.333333 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8l-213.333333-213.333333c-17.066667-17.066667-17.066667-42.666667 0-59.733333s42.666667-17.066667 59.733333 0l213.333333 213.333333c17.066667 17.066667 17.066667 42.666667 0 59.733333C746.666667 422.4 738.133333 426.666667 725.333333 426.666667z"></path>
+      <path d="M298.666667 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8-17.066667-17.066667-17.066667-42.666667 0-59.733333l213.333333-213.333333c17.066667-17.066667 42.666667-17.066667 59.733333 0s17.066667 42.666667 0 59.733333l-213.333333 213.333333C320 422.4 311.466667 426.666667 298.666667 426.666667z"></path>
+      <path d="M512 896c-25.6 0-42.666667-17.066667-42.666667-42.666667L469.333333 170.666667c0-25.6 17.066667-42.666667 42.666667-42.666667s42.666667 17.066667 42.666667 42.666667l0 682.666667C554.666667 878.933333 537.6 896 512 896z"></path>
+    </svg>
+  </div>
+
+  
+  <!-- aplayer -->
+
+
+<!-- dplayer -->
+
+
+<!-- copy button  -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+<!-- https://clipboardjs.com/ -->
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+  
+  <!-- 尾部用户自定义相关内容 -->
+</body>
+</html>

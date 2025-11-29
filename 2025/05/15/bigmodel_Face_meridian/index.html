@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#3367D6"/>
+  <link rel="apple-touch-icon" href="/icons-192.png">
+  <link rel="manifest" href="/manifest.json">
+  
+  <meta name="generator" content="Hexo 7.3.0">
+
+  
+
+  
+
+  
+    <meta name="author" content="Hong-116">
+  
+
+  
+
+  
+
+  <title>大模型面经 | 知其然并知其所以然</title>
+
+  
+
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+
+  <!--mathjax latex数学公式显示支持-->
+  
+  
+
+  
+
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+  <div class="root-container">
+    
+<!-- header container -->
+<header class="header-container post">
+  
+    <div class="post-image" style="background-image: url(/assets/bg.jpg)"></div>
+  
+
+  <!-- navbar -->
+<nav class="navbar">
+  <div class="navbar-content">
+    <!-- logo -->
+    <div class="navbar-logo">
+      <a href="/">
+        
+          知其然并知其所以然
+        
+      </a>
+    </div>
+    <!-- link -->
+    <div class="navbar-link">
+      <div class="navbar-btn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="navbar-list">
+        
+          <li class="navbar-list-item"><a href="/">首页</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <div class="header-content">
+      <div class="post-text layout-block">
+        <div class="layout-margin">
+          <h1 class="title-wrap" data-type-text="大模型面经">大模型面经</h1>
+          <h2 class="title-sub-wrap">
+            <strong>Hong-116</strong>
+            <span>发布于</span>
+            <time  class="article-date" datetime="2025-05-15T05:58:22.072Z" itemprop="datePublished">2025-05-15</time>
+          </h2>
+          
+            <h2 class="last-time">
+              <span>最后更新于</span>
+              <time  class="article-updated" datetime="2025-06-03T14:30:08.626Z" itemprop="dateUpdated">2025-06-03</time>
+            </h2>
+          
+          
+          <ul class="wrap-list dark">
+  
+</ul>
+          <ul class="wrap-list dark">
+  
+</ul>
+        </div>
+      </div>
+    </div>
+  
+
+  
+  
+  
+</header>
+
+
+    <!-- 文章 -->
+
+<!-- 文章内容 -->
+<div class="body-container">
+  <article class="content-container layout-block post-container">
+    <div class="article-info">
+      
+      
+      
+      
+      <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
+        <h1 id="阿里云通义灵码"><a href="#阿里云通义灵码" class="headerlink" title="阿里云通义灵码"></a>阿里云通义灵码</h1><h2 id="手撕代码"><a href="#手撕代码" class="headerlink" title="手撕代码"></a>手撕代码</h2><p>最大字数组和（动态规划）<br>动态规划关键就是找好动态规划转移方程，难度还可以</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">maxnum</span>(<span class="params">nums</span>):</span><br><span class="line">    cur = best = nums[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> nums[<span class="number">1</span>:]:</span><br><span class="line">        cur = <span class="built_in">max</span>(i, cur+i)</span><br><span class="line">        best = <span class="built_in">max</span>(cur , best)</span><br><span class="line">    <span class="keyword">return</span> best </span><br></pre></td></tr></table></figure>
+<h2 id="面试"><a href="#面试" class="headerlink" title="面试"></a>面试</h2><p>1.简单介绍一下自己和项目<br>2.看到简历中写到构建领域知识库，主要做了哪些工作，有什么难点，怎么解决的<br>3.讲一下项目中自己做的部分的架构<br>4.看到用了计算机视觉小模型，为什么要这么做，直接用大模型有什么问题<br>5.小模型效果怎么样<br>6.60%的准确度是怎么来的<br>7.讲一个智能体（当时讲的日报）<br>8.有做过微调吗<br>9.数据集量怎么样，有没有尝试过数据生成<br>10.有论文吗<br>11.反问：评价一下自己的面试过程以及有没有什么未来的建议<br>建议：项目需要针对一个难点进行亮点创新，并且最后的结果也要是出色的，后续建议多尝试一些微调、RAG等项目，多体会过程</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>感觉第一次有点太老实了，完完全全的诚实没坏处，但是没有讲出来项目的亮点和自己的优势，但感觉面试官还不错，没有深究数据部分</p>
+<h1 id="字节大模型算法（代码智能用户增长方向）"><a href="#字节大模型算法（代码智能用户增长方向）" class="headerlink" title="字节大模型算法（代码智能用户增长方向）"></a>字节大模型算法（代码智能用户增长方向）</h1><h2 id="面试-1"><a href="#面试-1" class="headerlink" title="面试"></a>面试</h2><p>1.简单介绍一下自己和项目<br>2.项目主要做了哪些工作<br>3.看到用可KG增强，主要是增强什么，为什么这么做<br>4.讲一下transformer结构<br>5.有尝试过lora微调吗，讲讲原理<br>6.你们lora微调的参数量是多少<br>7.说一下监督学习和强化学习的区别<br>8.有学过C++么<br>9.有学过操作系统么，说一下进程和线程的区别<br>10.有学过数据库么，讲一下事务的四大特性（下次一定把一致性焊死在脑子里）<br>11.python深拷贝和浅拷贝的区别<br>12.说一下mapreduce的过程</p>
+<h2 id="手撕代码-1"><a href="#手撕代码-1" class="headerlink" title="手撕代码"></a>手撕代码</h2><p>螺旋矩阵（逆向）<br>思想不难，主要是注意好边界条件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">xuanzhaun</span>(<span class="params">matrix</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> matrix <span class="keyword">or</span> <span class="keyword">not</span> matrix[<span class="number">0</span>]:</span><br><span class="line">        <span class="keyword">return</span> []</span><br><span class="line"></span><br><span class="line">    rows, cols = <span class="built_in">len</span>(matrix), <span class="built_in">len</span>(matrix[<span class="number">0</span>])</span><br><span class="line">    top , bottom = <span class="number">0</span>, rows-<span class="number">1</span></span><br><span class="line">    left, right = <span class="number">0</span>, cols-<span class="number">1</span></span><br><span class="line">    result = []</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> top&lt;=bottom <span class="keyword">and</span> left &lt;= right:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(top, bottom+<span class="number">1</span>):</span><br><span class="line">            result.append(matrix[i][left])</span><br><span class="line">        left += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(left, right+<span class="number">1</span>):</span><br><span class="line">            result.append(matrix[bottom][j])</span><br><span class="line">        bottom -= <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> left&lt;=right:</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span> (bottom, top-<span class="number">1</span>, -<span class="number">1</span>)</span><br><span class="line">                result.append(matrix[i][left])</span><br><span class="line">            right -= <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> top &lt;= bottm:</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span> (right, left+<span class="number">1</span>, -<span class="number">1</span>)</span><br><span class="line">                result.append(matrix[bottom][j])</span><br><span class="line">            top += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line">matrix1 = [</span><br><span class="line">    [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],</span><br><span class="line">    [<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>],</span><br><span class="line">    [<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>,<span class="number">13</span>]</span><br><span class="line">]</span><br><span class="line"><span class="built_in">print</span>(matrix1)</span><br></pre></td></tr></table></figure>
+<h1 id="京东一面"><a href="#京东一面" class="headerlink" title="京东一面"></a>京东一面</h1><h2 id="无手撕代码"><a href="#无手撕代码" class="headerlink" title="无手撕代码"></a>无手撕代码</h2><h2 id="八股"><a href="#八股" class="headerlink" title="八股"></a>八股</h2><p>1.简单介绍一下你的项目<br>2.详细讲讲你们的大模型项目，你主要负责了什么<br>3.还是没太懂你的东西，有没有什么技术路线图方便看一下<br>4.你们与知识库连接是怎么实现的，相似度检索、召回后怎么喂给大模型<br>5.你们的智能体应用是基于什么框架做的，都有了解过哪些大模型智能体架构<br>6.RAG主要是你负责的么<br>7.我理解你们的智能体就是一个pipeline，那面对用户不同的需求，你们怎么进行不同的交互呢</p>
+<h1 id="京东二面"><a href="#京东二面" class="headerlink" title="京东二面"></a>京东二面</h1><h2 id="无手撕代码-1"><a href="#无手撕代码-1" class="headerlink" title="无手撕代码"></a>无手撕代码</h2><h2 id="八股-1"><a href="#八股-1" class="headerlink" title="八股"></a>八股</h2><p>1.讲一下你对卷积的理解<br>2.讲一下什么是向量的内积，什么是向量的外积<br>3.讲一下什么是池化层，它的作用是什么<br>4.讲一下L1和L2的公式，以及什么时候用L1，什么时候用L2<br>5.讲一下什么是梯度下降，adamboost是什么，原理是什么<br>6.讲一下对于transformer的理解<br>7.讲一下transformer中注意力公式<br>8.layernorm的作用是什么，和batchnorm有什么区别</p>
+<h1 id="字节大模型（国际商业化产品与技术）"><a href="#字节大模型（国际商业化产品与技术）" class="headerlink" title="字节大模型（国际商业化产品与技术）"></a>字节大模型（国际商业化产品与技术）</h1><h2 id="手撕代码-2"><a href="#手撕代码-2" class="headerlink" title="手撕代码"></a>手撕代码</h2><p>1.二叉树的层序遍历，需要自己定义树结构<br>2.旋转矩阵，给定一个矩阵，输出矩阵顺时针旋转90度后的结果</p>
+<h2 id="八股-2"><a href="#八股-2" class="headerlink" title="八股"></a>八股</h2><p>1.简单介绍一下你的项目<br>2.说一下你们这个项目怎么做RAG增强的，智能体怎么做的<br>3.你做的这个大小模型协同主要是怎么做的<br>4.说一下transformer的架构，用的什么位置编码，位置编码在什么位置加的<br>5.讲一下lora的原理<br>6.不同模态对齐有了解么，比如blip2、clip是如何做模态对齐的<br>7.你简单说一下hadoop的项目，mapreduce的过程是怎样的</p>
+<h1 id="快手"><a href="#快手" class="headerlink" title="快手"></a>快手</h1><h2 id="手撕代码-3"><a href="#手撕代码-3" class="headerlink" title="手撕代码"></a>手撕代码</h2><p>有效的括号（力扣原题）</p>
+<h2 id="八股-3"><a href="#八股-3" class="headerlink" title="八股"></a>八股</h2><p>1.简单介绍一下你的项目<br>2.你们的RAG是怎么做的，你们的三个知识库的作用都是什么<br>3.你们的智能体是怎么做的<br>4.你的大小模型协同是在做什么东西，最后输出是什么<br>5.在这其中，你用知识图谱是在牵引什么<br>6.说一下你整个过程中有对模型算法上的改进么<br>7.你的小模型特征级联模块换成了Transformer，怎么换的<br>8.说一下你对多模态大模型的理解<br>9.我看你简历上涉及到了很多的小模型，大概讲讲为什么要用他们<br>10.你简单说一下P-tuning、prexi-turn ing都在解决什么问题<br>11.那你说一下lora微调的原理吧，追问：为什么要做低秩分解</p>
+<h1 id="美团"><a href="#美团" class="headerlink" title="美团"></a>美团</h1><h2 id="无手撕代码-2"><a href="#无手撕代码-2" class="headerlink" title="无手撕代码"></a>无手撕代码</h2><h2 id="八股-4"><a href="#八股-4" class="headerlink" title="八股"></a>八股</h2><p>1.说一下你的项目<br>2.你用到了rag，为什么要用rag，他的流程是怎样的<br>3.你们数据集来自哪里，你们的知识为什么是多载体、碎片化的知识<br>4.你们的知识图谱的作用是什么，他在牵引什么知识<br>5.你们的智能体是怎么样的功能，大概的流程是什么<br>6.那你们日报生成智能体里大模型是怎么处理各个不同数据的呢<br>7.场景题：如果说需要你去做一个用户购买后商品图片的一个分类任务，包括，识别出商品损坏的比例是多少，你会怎么构建数据集<br>8.那你觉得每个用户每次上传的东西是多变的，你觉得用RAG外挂知识库还合理么，可以用上下文提示词引导么<br>9.如果说随着数据的增多，你的知识库会变得很庞大，那索引的效率变低了怎么办<br>10.介绍业务，包括数据、评测、微调、训练，想做哪个，是否支持调剂</p>
+<h1 id="华为"><a href="#华为" class="headerlink" title="华为"></a>华为</h1><h2 id="手撕代码-4"><a href="#手撕代码-4" class="headerlink" title="手撕代码"></a>手撕代码</h2><p>搜索旋转数组元素</p>
+<h2 id="八股-5"><a href="#八股-5" class="headerlink" title="八股"></a>八股</h2><p>1.讲一下你的项目<br>2.你们知识库向量编码用的什么，bge-1.5你们用的时候有没有发现什么问题<br>3.大小模型协同是怎么做的<br>4.你参加了升腾的竞赛，你在这个竞赛中做了什么工作，你们对与升腾的架构有创新么<br>5.讲一下熵和交叉熵的区别<br>6.讲一下transformer结构<br>7.讲一下随机森林的原理</p>
+
+      </section>
+
+      
+      
+        <nav class="article-nav">
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2025/11/29/llm-neuro-symbolic/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">神经符号大模型AI系统相关论文研究</h2>
+        </a>
+      
+      <div class="card-text--row">Newer</div>
+    </div>
+  </article>
+</div>
+          
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2025/03/11/LeetCode-100/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">LeetCode-100</h2>
+        </a>
+      
+      <div class="card-text--row">Older</div>
+    </div>
+  </article>
+</div>
+          
+        </nav>
+      
+
+      <section class="page-message-container layout-padding">
+        
+
+
+  
+  
+
+  
+  
+
+
+      </section>
+    </div>
+    <div class="widget-info">
+      <section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-body">
+    
+      <img src="/assets/headimage.jpg" class="soft-size--round soft-style--box" alt="Hong-116">
+    
+    
+      <h2>Hong-116</h2>
+    
+    
+      <p>明天一定更新</p>
+    
+
+    <div class="count-box">
+      <div class="count-box--item">
+        <svg class="icon icon-article" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M240.51564747 647.74217627h196.07203239c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806V165.10332731c0-33.18142087-30.16492806-60.32985613-60.32985612-60.32985611H245.04038668C225.43318342 104.7734712 210.35071939 119.85593522 210.35071939 139.46313845V617.57724821c0 16.59071043 13.57421762 30.16492806 30.16492808 30.16492806z m663.62841731-452.47392089v482.63884894c0 33.18142087-27.14843525 60.32985613-60.32985612 60.32985613H180.18579134c-33.18142087 0-60.32985613-27.14843525-60.32985612-60.32985613V195.26825538c-49.77213131 0-90.49478418 40.72265287-90.49478417 90.49478417v452.4739209c0 49.77213131 40.72265287 90.49478418 90.49478417 90.49478417h286.56681657c16.59071043 0 30.16492806 13.57421762 30.16492807 30.16492807s13.57421762 30.16492806 30.16492805 30.16492806h90.49478418c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806s13.57421762-30.16492806 30.16492807-30.16492807h286.56681657c49.77213131 0 90.49478418-40.72265287 90.49478417-90.49478417V285.76303955c0-49.77213131-40.72265287-90.49478418-90.49478417-90.49478417zM587.41232014 647.74217627h191.54729318c19.60720323 0 34.68966726-15.08246403 34.68966729-34.68966727V134.93839925c0-16.59071043-13.57421762-30.16492806-30.16492808-30.16492805H617.57724821c-30.16492806 0-60.32985613 27.14843525-60.32985612 60.32985611v452.4739209c0 16.59071043 13.57421762 30.16492806 30.16492805 30.16492806z" fill="currentColor"></path>
+</svg>
+        <span>7</span>
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+        0
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+        0
+      </div>
+    </div>
+  </div>
+</section>
+
+      
+
+      
+
+      <section class="widget-categories widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+      <span>CATEGORIES</span>
+  </div>
+  <div class="widget-body">
+    <ul class="categories-list">
+      
+    </ul>
+  </div>
+</section>
+
+      <section class="widget-tags widget-item  layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+    <span>TAGS</span>
+  </div>
+  <div class="widget-body">
+    <div class="tags-cloud">
+      
+    </div>
+  </div>
+</section>
+    </div>
+  </article>
+</div>
+
+    <!-- footer container -->
+<footer id="footer" class="footer">
+  <div class="footer-container">
+    
+    <div class="social-icons">
+      
+        
+      
+        
+      
+        
+      
+        
+          <a href="https://github.com/Hong-116/" class="soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-github" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M64.6 512c0 195.6 125.4 361.9 300.1 422.9 23.5 5.9 19.9-10.8 19.9-22.2v-77.6c-135.8 15.9-141.3-74-150.5-89-18.5-31.5-61.9-39.5-49-54.5 31-15.9 62.5 4 98.9 58 26.4 39.1 77.9 32.5 104.1 26 5.7-23.5 17.9-44.5 34.7-60.9-140.7-25.2-199.4-111.1-199.4-213.3 0-49.5 16.4-95.1 48.4-131.8-20.4-60.6 1.9-112.4 4.9-120.1 58.2-5.2 118.5 41.6 123.3 45.3 33.1-8.9 70.8-13.7 112.9-13.7 42.4 0 80.3 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.4-43.9 2.9 7.7 24.7 58.3 5.5 118.1 32.5 36.8 49 82.8 49 132.4 0 102.3-59 188.3-200.2 213.2 23.5 23.3 38.1 55.5 38.1 91.1v112.7c0.8 9 0 17.9 15.1 17.9C832.7 877 960.4 709.4 960.4 512.1c0-247.5-200.6-447.9-447.9-447.9C265 64.1 64.6 264.5 64.6 512z"></path>
+</svg>
+          </a>
+        
+      
+    </div>
+     
+    <p>&copy; 2025 <a href="/" target="_blank">Hong-116</a></p>
+
+    
+
+    <p>Powered by <a href="https://hexo.io" target="_blank" rel="noopener noreferrer">Hexo</a> Theme - <a href="https://github.com/miiiku/flex-block" target="_blank" rel="noopener noreferrer author">flex-block</a></p>
+
+    <p>
+      <a href="javascript:;" id="theme-light">🌞 浅色</a>
+      <a href="javascript:;" id="theme-dark">🌛 深色</a>
+      <a href="javascript:;" id="theme-auto">🤖️ 自动</a>
+    </p>
+  </div>
+</footer>
+  </div>
+
+  <div class="back-to-top-fixed soft-size--round soft-style--box">
+    <svg class="icon icon-back-to-top" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <path d="M725.333333 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8l-213.333333-213.333333c-17.066667-17.066667-17.066667-42.666667 0-59.733333s42.666667-17.066667 59.733333 0l213.333333 213.333333c17.066667 17.066667 17.066667 42.666667 0 59.733333C746.666667 422.4 738.133333 426.666667 725.333333 426.666667z"></path>
+      <path d="M298.666667 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8-17.066667-17.066667-17.066667-42.666667 0-59.733333l213.333333-213.333333c17.066667-17.066667 42.666667-17.066667 59.733333 0s17.066667 42.666667 0 59.733333l-213.333333 213.333333C320 422.4 311.466667 426.666667 298.666667 426.666667z"></path>
+      <path d="M512 896c-25.6 0-42.666667-17.066667-42.666667-42.666667L469.333333 170.666667c0-25.6 17.066667-42.666667 42.666667-42.666667s42.666667 17.066667 42.666667 42.666667l0 682.666667C554.666667 878.933333 537.6 896 512 896z"></path>
+    </svg>
+  </div>
+
+  
+  <!-- aplayer -->
+
+
+<!-- dplayer -->
+
+
+<!-- copy button  -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+<!-- https://clipboardjs.com/ -->
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+  
+  <!-- 尾部用户自定义相关内容 -->
+</body>
+</html>
