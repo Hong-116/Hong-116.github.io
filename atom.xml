@@ -6,7 +6,7 @@
   <link href="https://hong-116.github.io/atom.xml" rel="self"/>
   
   <link href="https://hong-116.github.io/"/>
-  <updated>2025-12-04T07:06:48.317Z</updated>
+  <updated>2026-01-14T07:57:34.276Z</updated>
   <id>https://hong-116.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于远程服务器修改镜像/密码后连接失败问题</title>
+    <link href="https://hong-116.github.io/2025/12/04/Remote_server_connection_failed/"/>
+    <id>https://hong-116.github.io/2025/12/04/Remote_server_connection_failed/</id>
+    <published>2025-12-04T07:06:48.317Z</published>
+    <updated>2026-01-14T07:57:34.276Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="远程服务器"><a href="#远程服务器" class="headerlink" title="远程服务器"></a>远程服务器</h1><p><a href="https://www.autodl.com/console/homepage/personal">AutoDL 容器</a></p><h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>归因为本地机器中存有旧版链接远程服务器历史，导致vscode一直显示密钥更改。本地命令打开链接历史记录，将其中历史密钥记录删除，然后在vscode中重新配置即可</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.ssh/known_hosts</span><br></pre></td></tr></table></figure><p>可直接在vim中手动修改，但比较麻烦，可使用下面方式自动删除对应的服务器地址（退出vim的方式：Esc后敲:q!不保存退出，:wq保存更改退出）</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -R <span class="string">&quot;[connect.westc.gpuhub.com]:2222&quot;</span></span><br></pre></td></tr></table></figure><p>注意远端服务器地址可能为共享地址，故删除一定要带上机器的端口号</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;远程服务器&quot;&gt;&lt;a href=&quot;#远程服务器&quot; class=&quot;headerlink&quot; title=&quot;远程服务器&quot;&gt;&lt;/a&gt;远程服务器&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://www.autodl.com/console/homepage/personal&quot;</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>screen工具后台训练</title>

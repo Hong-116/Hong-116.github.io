@@ -22,7 +22,7 @@
 
   
 
-  <title>最基础的Markdown（从hello-world扒下来的） | 知其然并知其所以然</title>
+  <title>关于远程服务器修改镜像/密码后连接失败问题 | 知其然并知其所以然</title>
 
   
 
@@ -97,12 +97,17 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap" data-type-text="最基础的Markdown（从hello-world扒下来的）">最基础的Markdown（从hello-world扒下来的）</h1>
+          <h1 class="title-wrap" data-type-text="关于远程服务器修改镜像/密码后连接失败问题">关于远程服务器修改镜像/密码后连接失败问题</h1>
           <h2 class="title-sub-wrap">
             <strong>Hong-116</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2025-11-29T12:33:12.123Z" itemprop="datePublished">2025-11-29</time>
+            <time  class="article-date" datetime="2025-12-04T07:06:48.317Z" itemprop="datePublished">2025-12-04</time>
           </h2>
+          
+            <h2 class="last-time">
+              <span>最后更新于</span>
+              <time  class="article-updated" datetime="2026-01-14T07:57:34.276Z" itemprop="dateUpdated">2026-01-14</time>
+            </h2>
           
           
           
@@ -141,11 +146,12 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <p>hello-world里面的Markdown基础语法</p>
-<h2 id="名字被卡了好久的二级标题"><a href="#名字被卡了好久的二级标题" class="headerlink" title="名字被卡了好久的二级标题"></a>名字被卡了好久的二级标题</h2><h3 id="写文字"><a href="#写文字" class="headerlink" title="写文字"></a>写文字</h3><p>直接写，写带链接的内容：</p>
-<p>[内容](该内容网址)</p>
-<p>比如：这是我的博客：<a href="https://hong-116.github.io/">Goat or Out</a></p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>边写边学这个Markdown吧</p>
+        <h1 id="远程服务器"><a href="#远程服务器" class="headerlink" title="远程服务器"></a>远程服务器</h1><p><a target="_blank" rel="noopener" href="https://www.autodl.com/console/homepage/personal">AutoDL 容器</a></p>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>归因为本地机器中存有旧版链接远程服务器历史，导致vscode一直显示密钥更改。本地命令打开链接历史记录，将其中历史密钥记录删除，然后在vscode中重新配置即可</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.ssh/known_hosts</span><br></pre></td></tr></table></figure>
+<p>可直接在vim中手动修改，但比较麻烦，可使用下面方式自动删除对应的服务器地址（退出vim的方式：Esc后敲:q!不保存退出，:wq保存更改退出）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -R <span class="string">&quot;[connect.westc.gpuhub.com]:2222&quot;</span></span><br></pre></td></tr></table></figure>
+<p>注意远端服务器地址可能为共享地址，故删除一定要带上机器的端口号</p>
 
       </section>
 
@@ -153,28 +159,14 @@
       
         <nav class="article-nav">
           
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-    <div class="card-text">
-      
-        <a href="/2025/11/29/llm-neuro-symbolic/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">神经符号大模型AI系统相关论文研究</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
     <div class="card-text">
       
-        <a href="/2025/11/29/LeeCode150/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">LeetCode经典150题</h2>
+        <a href="/2025/12/04/screen_tool_use/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">screen工具后台训练</h2>
         </a>
       
       <div class="card-text--row">Older</div>
@@ -261,7 +253,7 @@
     <span>TABLE OF CONTENTS</span>
   </div>
   <div class="widget-body">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8D%E5%AD%97%E8%A2%AB%E5%8D%A1%E4%BA%86%E5%A5%BD%E4%B9%85%E7%9A%84%E4%BA%8C%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">名字被卡了好久的二级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%99%E6%96%87%E5%AD%97"><span class="toc-number">1.1.</span> <span class="toc-text">写文字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.2.</span> <span class="toc-text">总结</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">1.</span> <span class="toc-text">远程服务器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">2.</span> <span class="toc-text">解决方案</span></a></li></ol>
   </div>
 </section>
 
